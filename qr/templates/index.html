@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='generate.js') }}"></script>
+
+    <title>QR Code Generator</title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="form-data">
+      <input type="text" id="form-fill-color" value="black">
+      <input type="text" id="form-back-color" value="white">
+
+      <button onclick="generateQRCode()">Generate</button>
+
+      <div>
+        <img src="" id="image" width="256px" height="256px" hidden>
+      </div>
+    </div>
+  </body>
+</html>
