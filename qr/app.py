@@ -1,7 +1,7 @@
 import base64
 import io
 
-from flask import Flask, render_template, request
+from flask import Flask, request
 from qrcode import QRCode
 
 from qr.schemas import QRCodeRequest
@@ -31,9 +31,3 @@ def generate():
         encoded = base64.b64encode(f.getvalue())
 
     return {"image": encoded.decode("utf-8")}
-
-
-@app.route("/", methods=["GET"])
-def index():
-    """Render the index template"""
-    return render_template("index.html")

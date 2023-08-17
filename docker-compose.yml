@@ -1,0 +1,23 @@
+version: "3"
+
+networks:
+  default:
+    name: github-dev
+    external: true
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      tags:
+        - "qr-code-generator:latest"
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/code
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "http://localhost:8000/status"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
