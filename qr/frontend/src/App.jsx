@@ -40,7 +40,7 @@ const App = () => {
         </div>
 
         <div className="ml-8">
-          <div className="h-64 flex-col">
+          <div className="h-64 flex flex-col">
             <div className="flex items-center mb-3">
               <label className="w-32 font-bold">
                 Data
